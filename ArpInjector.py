@@ -47,6 +47,6 @@ def makePkt():
     return etherHeader+arpHeader
 
 sock = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.htons(0x800))
-sock.bind(("wlp2s0", socket.htons(0x800)))
+sock.bind(("wlp2s0", socket.htons(0x800))) #ALTERE AQUI - Para mudar sua interface de rede
 sock.send(makePkt())
 sock.close()
